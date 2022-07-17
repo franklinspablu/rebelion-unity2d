@@ -19,6 +19,8 @@ public class CharacterController : MonoBehaviour
     private Vector3 respawnPoint;
     public GameObject FallDetector;
 
+    private AudioSource saltar;
+
     Animator playerAnim;
 
     private bool isPaused = false;
@@ -40,6 +42,7 @@ public class CharacterController : MonoBehaviour
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
         respawnPoint = transform.position;
+        saltar = GetComponent<AudioSource>();
         
         // Items
         keyImage.enabled = false;
@@ -92,6 +95,7 @@ public class CharacterController : MonoBehaviour
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
             playerAnim.SetBool("IsJumping", true);
+            saltar.Play();
         }
 
         // Pause

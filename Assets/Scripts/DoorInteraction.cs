@@ -8,10 +8,14 @@ public class DoorInteraction : MonoBehaviour
     private TextAlignment OpenDoorText;
     private bool OpenDoor = false;
     static public bool GameOver = false, GameClear = false;
+    private AudioSource door;
+   
+
 
     private void Start()
     {
         DoorAnimation = GetComponent<Animator>();
+        door = GetComponent<AudioSource>();
     }
 
    private  void Update()
@@ -47,6 +51,7 @@ public class DoorInteraction : MonoBehaviour
             DoorAnimation.SetTrigger("OpeningDoor");
             yield return new WaitForSeconds( 3.0F );
             GameClear = true;
+            door.Play();
 
         } else if(OpenDoor && Input.GetKeyDown(KeyCode.F))
         {

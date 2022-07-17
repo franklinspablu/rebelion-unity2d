@@ -20,6 +20,7 @@ public class CharacterController : MonoBehaviour
     public GameObject FallDetector;
 
     private AudioSource saltar;
+   
 
     Animator playerAnim;
 
@@ -43,6 +44,7 @@ public class CharacterController : MonoBehaviour
         facingRight = t.localScale.x > 0;
         respawnPoint = transform.position;
         saltar = GetComponent<AudioSource>();
+        
         
         // Items
         keyImage.enabled = false;
@@ -194,6 +196,7 @@ public class CharacterController : MonoBehaviour
         if(other.tag == "FallDetector")
         {
             transform.position = respawnPoint;
+
         }
     }
 }

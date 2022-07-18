@@ -6,55 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa1 : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject menuPausa;
+    // Funciones del canvas pausa
+    [SerializeField] private GameObject CanvasPausa;
 
-    private bool juegoPausado;
-
-    /*
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (juegoPausado)
-            {
-                Reanudar();
-            }
-            else
-            {
-                Pausa();
-            }
-        }
-    }*/
-
-    public void Pausa()
-    {
-        juegoPausado = true;
-        Time.timeScale = 0f;
-        botonPausa.SetActive(false);
-        menuPausa.SetActive(true);
-    }
-
+    // Continua el juego
     public void Reanudar()
     {
-        juegoPausado = false;
+        CharacterController.isPaused = false;
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
+        CanvasPausa.SetActive(false);
     }
 
+    // Reinicia la partida
     public void Reiniciar()
     {
-        juegoPausado = false;
+        CharacterController.isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    // Regresa a la canvas de inicio
     public void Cerrar()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    // Cierra el juego
     public void Exit()
     {
         Debug.Log("CERRANDOOOOO!!!!!");

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CharacterController : MonoBehaviour
 {
      // Move player in 2D space
-    public float maxSpeed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
+    public float maxSpeed = 8.5f;
+    public float jumpHeight = 25f;
+    public float gravityScale = 9f;
     bool facingRight = false;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
 
     Animator playerAnim;
 
-    private bool isPaused = false;
+    static public bool isPaused = false;
     public Canvas gamePausedCanvas, buttonADCanvas, buttonWCanvas, buttonFCanvas, messageCanvas, GameOverCanvas, GameClearCanvas;
     static public bool GotKey = false;
     public Image keyImage;
@@ -45,17 +45,8 @@ public class CharacterController : MonoBehaviour
         respawnPoint = transform.position;
         saltar = GetComponent<AudioSource>();
         
-        
         // Items
         keyImage.enabled = false;
-
-        // canvas
-        gamePausedCanvas.gameObject.SetActive(false);
-        buttonWCanvas.gameObject.SetActive(false);
-        buttonFCanvas.gameObject.SetActive(false);
-        messageCanvas.gameObject.SetActive(false);
-        GameOverCanvas.gameObject.SetActive(false);
-        GameClearCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -101,7 +92,7 @@ public class CharacterController : MonoBehaviour
         }
 
         // Pause
-        if(Input.GetKeyDown(KeyCode.P)){
+        if(Input.GetKeyDown(KeyCode.Escape)){
             if(isPaused == false){
                 Time.timeScale = 0;
                 isPaused = true;
@@ -171,6 +162,17 @@ public class CharacterController : MonoBehaviour
     // Controlls tutorial
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.CompareTag("Tutorial_0"))
+        {
+            gamePausedCanvas.gameObject.SetActive(false);
+            buttonADCanvas.gameObject.SetActive(true);
+            buttonWCanvas.gameObject.SetActive(false);
+            buttonFCanvas.gameObject.SetActive(false);
+            messageCanvas.gameObject.SetActive(false);
+            GameOverCanvas.gameObject.SetActive(false);
+            GameClearCanvas.gameObject.SetActive(false);
+        }
+        
         if(other.CompareTag("Tutorial_1"))
         {
             buttonADCanvas.gameObject.SetActive(false);

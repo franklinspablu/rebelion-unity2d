@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa1 : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject menuPausa;
-
-    private bool juegoPausado;
+    // [SerializeField] private GameObject botonPausa;
+    [SerializeField] private GameObject CanvasPausa;
 
     /*
     public void Update()
@@ -27,25 +25,25 @@ public class MenuPausa1 : MonoBehaviour
         }
     }*/
 
-    public void Pausa()
-    {
-        juegoPausado = true;
-        Time.timeScale = 0f;
-        botonPausa.SetActive(false);
-        menuPausa.SetActive(true);
-    }
+    // public void Pausa()
+    // {
+    //     juegoPausado = true;
+    //     Time.timeScale = 0f;
+    //     botonPausa.SetActive(false);
+    //     menuPausa.SetActive(true);
+    // }
 
     public void Reanudar()
     {
-        juegoPausado = false;
+        CharacterController.isPaused = false;
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
+        // botonPausa.SetActive(true);
+        CanvasPausa.SetActive(false);
     }
 
     public void Reiniciar()
     {
-        juegoPausado = false;
+        CharacterController.isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -12,6 +12,8 @@ TagManager:
   - Tutorial_3
   - Message_1
   - FallDetector
+  - Tutorial_0
+  - Reset
   layers:
   - Default
   - TransparentFX

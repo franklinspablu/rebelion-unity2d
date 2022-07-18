@@ -72152,6 +72152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+<<<<<<< HEAD
 --- !u!1 &1527845157
 GameObject:
   m_ObjectHideFlags: 0
@@ -72277,6 +72278,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> savid
 --- !u!1 &1547466374
 GameObject:
   m_ObjectHideFlags: 0
@@ -73013,8 +73016,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769140775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -17.05, y: 0.99, z: -0.0012419708}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+=======
+  m_LocalPosition: {x: -17.05, y: 1.08, z: -0.0012419708}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+>>>>>>> savid
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -73699,8 +73707,11 @@ MonoBehaviour:
   playerHealth: {fileID: 1523372860}
   totalHealthBar: {fileID: 1875509665}
   currenthealthBar: {fileID: 1266473938}
+<<<<<<< HEAD
 =======
 >>>>>>> b3d6ece6bd75c480662846ba7a4a56b9cc028419
+=======
+>>>>>>> savid
 --- !u!1 &2110949110
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CharacterController : MonoBehaviour
 {
      // Move player in 2D space
-    public float maxSpeed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 9.8f;
+    public float maxSpeed = 8.5f;
+    public float jumpHeight = 25f;
+    public float gravityScale = 9f;
     bool facingRight = false;
     float moveDirection = 0;
     bool isGrounded = false;
